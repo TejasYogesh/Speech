@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program 7</title>
+</head>
+<body>
+    <style>
+        body{
+            background-color: azure;
+        }
+        .container{
+            position: absolute;
+            margin: 25% 50%;
+            transform: translate(-50% , -50%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            width: max-content;
+
+        }
+        h1{
+            font-style: 2.5rem;
+            margin: 10px 0px;
+        }
+        h2{
+            font-size: 1.2rem;
+        }
+        ul{
+            list-style:circle;
+            margin:10px 0px;
+        }
+        li{
+            /* font-style: ; */
+            font-size:1.25rem;
+            margin: 5px 0px;
+
+        }
+        a{
+            color: blue;
+            text-decoration: none;
+        }
+        button{
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: rgb(85 , 58,182);
+            color:white;
+            font-size:1.25rem;
+            margin: 5px 0px;
+            cursor: pointer;
+
+        }
+    </style>
+</body>
+<div class="container">
+    <h1>Interactive voice Example</h1>
+    <h2>OOPS! Something went wrong</h2>
+    <p>We're sorry, but it seems there was an error whilte processing your request.</p>
+    <p>Please try the following</p>
+    <ul>
+        <li>Check the internet Connection</li>
+        <li><a href="/">Return to the homepage</a></li>
+        <li>Contact our <a href="/contact">Support Team</a>
+            for Assistance.
+        </li>
+        <button onclick="speakText()">Speak</button>
+    </ul>
+    <script>
+        function speakText(){
+            var message = new SpeechSynthesisUtterance();
+            message.text = "Hello mam , good afternoon"
+            message.pitch = 4;
+            message.rate = 1;
+            window.speechSynthesis.speak(message);
+            
+        }
+    </script>
+</div>
+</html>
